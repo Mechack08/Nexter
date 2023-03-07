@@ -6,14 +6,29 @@
   display: grid;
   align-content: center;
   justify-content: center;
-  justify-items: center;
+  justify-items: start;
   grid-row-gap: 2rem;
+
+  &__head {
+    display: none;
+  }
+
+  @media screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+
+    grid-template-columns: repeat(3, min-content max-content);
+    grid-column-gap: 2rem;
+  }
+
+  @media screen and (max-width: $bp-small) {
+    grid-template-columns: none;
+  }
 
   &__list {
     display: grid;
     grid-template-columns: min-content max-content;
     grid-column-gap: 2rem;
-    grid-row-gap: 5vw;
+    grid-row-gap: 5vh;
     align-items: center;
   }
 
